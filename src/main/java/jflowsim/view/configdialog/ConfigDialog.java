@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.text.DecimalFormat;
+import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import jflowsim.controller.solverbuilder.SolverBuilder;
 import jflowsim.controller.solverbuilder.SolverFactory;
@@ -26,8 +27,10 @@ public class ConfigDialog extends javax.swing.JDialog implements WindowListener 
         this.parent = _parent;
 
         initComponents();
-
-        this.setIconImage(ImageUtilities.createImageIcon("config").getImage());
+        
+        final ImageIcon imageIcon = ImageUtilities.createImageIcon("config");
+        if(imageIcon != null)
+            this.setIconImage(imageIcon.getImage());
 
         this.addWindowListener(this);
     }
